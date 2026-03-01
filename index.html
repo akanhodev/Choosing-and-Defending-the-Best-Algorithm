@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Scheduling - Greedy vs Brute Force</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <script src="static/index.js"></script>
+  </head>
+  <body>
+    <h1>Delivery Task Scheduling</h1>
+    <p style="text-align: center; color: #666">
+      Greedy vs Brute Force — Simple Comparison
+    </p>
+
+    <div class="section">
+      <h2>1.Sample Data</h2>
+      <p>
+        A delivery driver receives 6 tasks, each with a start and end time. He
+        can only do one task at a time. How many can he complete?
+      </p>
+      <table id="sampleTable">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Start</th>
+            <th>End</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button class="btn" onclick="runSample()">▶ Run Both Algorithms</button>
+      <div id="sampleResult"></div>
+    </div>
+
+    <div class="section">
+      <h2>2.Test on a Large Input</h2>
+      <p>Brute Force becomes unusable on large inputs. Here's why.</p>
+      <label
+        >Number of tasks:
+        <input type="number" id="bigN" value="10000" min="100" max="50000"
+      /></label>
+      <br /><br />
+      <button class="btn" onclick="runLarge()">▶ Run on Large Input</button>
+      <div id="largeResult"></div>
+    </div>
+
+    <div class="section">
+      <h2>3.Summary Comparison</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Greedy</th>
+            <th>Brute Force</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time Complexity</td>
+            <td class="better">O(n log n)</td>
+            <td class="worse">O(2ⁿ)</td>
+          </tr>
+          <tr>
+            <td>Speed on 10,000 tasks</td>
+            <td class="better">~1 ms</td>
+            <td class="worse">Impossible</td>
+          </tr>
+          <tr>
+            <td>Optimal result?</td>
+            <td class="better">✅ Yes (proven)</td>
+            <td class="better">✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Code readability</td>
+            <td class="better">Simple (~10 lines)</td>
+            <td class="worse">Complex (recursive)</td>
+          </tr>
+          <tr>
+            <td>Memory</td>
+            <td class="better">O(n)</td>
+            <td class="worse">O(2ⁿ)</td>
+          </tr>
+          <tr>
+            <td>Production use</td>
+            <td class="better">✅ Recommended</td>
+            <td class="worse">❌ Unit tests only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>4. Edge Cases (Bonus)</h2>
+      <button class="btn" onclick="runStress()">▶ Run 3 Edge Case Tests</button>
+      <div id="stressResult"></div>
+    </div>
+
+    <div class="section">
+      <h2>5. Conclusion</h2>
+      <div class="result-box green">
+        <strong>✅ Recommended Algorithm: Greedy</strong><br />
+        The idea is simple: sort tasks by end time, then pick them one by one as
+        long as they don't overlap with the previous one.<br /><br />
+        Brute Force explores every possible combination (2ⁿ). At n=30, that's
+        over a billion cases. It's only useful to
+        <strong>verify correctness</strong> of the greedy algorithm on small
+        inputs in automated tests.
+      </div>
+    </div>
+  </body>
+</html>
