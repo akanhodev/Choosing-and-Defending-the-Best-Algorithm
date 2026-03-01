@@ -13,7 +13,7 @@
     </p>
 
     <div class="section">
-      <h2>1.Sample Data</h2>
+      <h2>1. Sample Data</h2>
       <p>
         A delivery driver receives 6 tasks, each with a start and end time. He
         can only do one task at a time. How many can he complete?
@@ -33,7 +33,7 @@
     </div>
 
     <div class="section">
-      <h2>2.Test on a Large Input</h2>
+      <h2>2. Test on a Large Input</h2>
       <p>Brute Force becomes unusable on large inputs. Here's why.</p>
       <label
         >Number of tasks:
@@ -45,7 +45,7 @@
     </div>
 
     <div class="section">
-      <h2>3.Summary Comparison</h2>
+      <h2>3. Summary Comparison</h2>
       <table class="comparison-table">
         <thead>
           <tr>
@@ -67,8 +67,8 @@
           </tr>
           <tr>
             <td>Optimal result?</td>
-            <td class="better">✅ Yes (proven)</td>
-            <td class="better">✅ Yes</td>
+            <td class="better">Yes (proven)</td>
+            <td class="better">Yes</td>
           </tr>
           <tr>
             <td>Code readability</td>
@@ -82,23 +82,16 @@
           </tr>
           <tr>
             <td>Production use</td>
-            <td class="better">✅ Recommended</td>
-            <td class="worse">❌ Unit tests only</td>
+            <td class="better">Recommended</td>
+            <td class="worse">Unit tests only</td>
           </tr>
         </tbody>
       </table>
     </div>
-
-    <div class="section">
-      <h2>4. Edge Cases (Bonus)</h2>
-      <button class="btn" onclick="runStress()">▶ Run 3 Edge Case Tests</button>
-      <div id="stressResult"></div>
-    </div>
-
     <div class="section">
       <h2>5. Conclusion</h2>
       <div class="result-box green">
-        <strong>✅ Recommended Algorithm: Greedy</strong><br />
+        <strong>Recommended Algorithm: Greedy</strong><br />
         The idea is simple: sort tasks by end time, then pick them one by one as
         long as they don't overlap with the previous one.<br /><br />
         Brute Force explores every possible combination (2ⁿ). At n=30, that's
